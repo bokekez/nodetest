@@ -1,0 +1,25 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bokekez/nodetest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bokekez/nodetest/issues"
+  },
+  "homepage": "https://github.com/bokekez/nodetest#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "daemon": "^1.1.0",
+    "express": "^4.17.1"
+  }
+}
