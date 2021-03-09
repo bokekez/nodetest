@@ -25,16 +25,23 @@ const data = {
 }
 
 app.get('/', (req, res) =>{
-    res.send('working!');
+    res.send(data.users);
 })
 
 app.post('/signin', (req, res) =>{
-    if(req.body.email === data.users[0].email && 
-        req.body.password === data.users[0].password){
-            res.json('Good!');
-        } else {
-            res.json(400).json('Bad!');
-        }
+    data.users.forEach(username => {
+        data.users.email === req.body.email &&
+        data.users.password === req.body.password
+    })
+    {
+        res.json('10 4 dinosaur')
+    } 
+    // if(req.body.email === data.users[0].email && 
+    //     req.body.password === data.users[0].password){
+    //         res.json('Good!');
+    //     } else {
+    //         res.json(400).json('Bad!');
+    //     }
 })
 
 app.post('/register', (req, res) => {
@@ -49,6 +56,16 @@ app.post('/register', (req, res) => {
     res.json(data.users[data.users.length-1]);
 })
 
+app.get('/profile/:id', (req, res) => {
+    const { id } = req.params;
+    data.users.forEach(user => {
+        if(user.id === id) {
+            res.json(user);
+        } else {
+            res.status(404).json('No such user!');
+        }
+    })
+})
 // app.post('/signin', (req, res) =>{
 //     res.send('signing')
 // })
