@@ -37,6 +37,18 @@ app.post('/signin', (req, res) =>{
         }
 })
 
+app.post('/register', (req, res) => {
+    const { email, name, password} = req.body;
+    data.users.push({
+        id: '3',
+        name: name,
+        email: email,
+        password: password,
+        joined: new Date()
+    })
+    res.json(data.users[data.users.length-1]);
+})
+
 // app.post('/signin', (req, res) =>{
 //     res.send('signing')
 // })
